@@ -1,0 +1,37 @@
+
+
+<!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <% t.data.forEach(function(img){ %>
+            <div class="swiper-slide">
+                <div class="pic">
+                    <img src="images/<%=img.url %>" />
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev">
+        <i class="fa fa-angle-left"></i>
+    </div>
+    <div class="swiper-button-next">
+        <i class="fa fa-angle-right visible"></i>
+    </div>
+
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <div class="caption-container">
+        <% t.data.forEach(function(img,index){ %>
+            <% if (index==0) { %><p class="caption visible" id="caption<%=index%>"><% } else { %><p class="caption" id="caption<%=index%>"><% } %>
+            <span class="bold-caption"><%=img.boldcaption%></span> <span class="pipe">&nbsp;&#8214;&nbsp;</span> <%=img.caption%> <span class="photo-byline"><%=gettext('Photo by ')%><%=img.byline%></span>
+        </p>
+        <% }) %>
+    </div>
+
+
+</div>
