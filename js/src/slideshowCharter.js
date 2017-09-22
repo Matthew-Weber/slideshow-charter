@@ -2,6 +2,7 @@ Reuters = Reuters || {};
 Reuters.Graphics = Reuters.Graphics || {};
 //the view that constructs a linechart
 Reuters.Graphics.ImageGallery = Backbone.View.extend({
+	black: false,
 	initialize: function(opts){
 		var self = this;
 		this.options = opts; 		
@@ -16,6 +17,9 @@ Reuters.Graphics.ImageGallery = Backbone.View.extend({
 		});
 
 
+	},
+	events: {
+		'click span.swiper-pagination-bullet': 'slideJump'
 	},
 	template: Reuters.Graphics.slideshowCharter.Template.gallery,
 	getImages: function(data){
@@ -38,6 +42,7 @@ Reuters.Graphics.ImageGallery = Backbone.View.extend({
 		    pagination: '.swiper-pagination',
 		    nextButton: '.swiper-button-next',
 		    prevButton: '.swiper-button-prev',
+		    speed: 400,
 		    onSlideChangeStart: function(swiper){
 		    	self.slideChange(swiper);
 		    }
@@ -52,6 +57,15 @@ Reuters.Graphics.ImageGallery = Backbone.View.extend({
 
 		$('p.caption').removeClass('visible');
 		$('p.caption#caption'+current).delay(1000).addClass('visible');
+
+	},
+	slideJump: function(e) {
+		var self = this;
+
+		var jumpTo = $(e.target).index();
+
+		self.swiper.slideTo(jumpTo, 400);
+
 
 	}
 })

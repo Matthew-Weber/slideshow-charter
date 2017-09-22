@@ -79,7 +79,7 @@
 	.swiper-button-prev {
 		top:0px;
 		left:0px;
-		width:20vh;
+		width:calc( 20vw + 100px);
 		height:100%;
 			background:none;
 		i {
@@ -96,7 +96,7 @@
 	.swiper-button-next {
 		top:0px;
 		right:0px;
-		width:20vh;
+		width:calc( 20vw + 100px);
 		height:100%;
 		background:none;
 
