@@ -251,3 +251,55 @@
 
 
 }   
+
+.pym {
+
+    .swiper-container {
+        position:relative;
+        padding-left:10%;
+            padding-right:10%;
+
+        @media (max-width:998px){
+            padding-left:10%;
+            padding-right:10%;
+
+            .caption-container {
+                height:140px;
+                width: calc(100% - 30px);
+            }
+
+            .swiper-button-prev {
+                top:0px;
+                left:0px;
+                width:50px;
+                height:100%;
+                    background:none;
+                i {
+                    top:35%;
+                    background:none;
+                    left:calc( 10vw - 50px);
+                    font-size:50px;
+                    color:$gray2;
+                    opacity:0.9;
+                }
+            }
+            .swiper-button-next {
+            top:0px;
+            right:0px;
+            width:50px;
+            height:100%;
+            background:none;
+            i {
+                top:35%;
+                background:none;
+                right:calc( 10vw - 50px);
+                font-size:50px;
+                color:$gray2;
+                opacity:0.9;
+            }
+        }
+        }
+
+    }
+
+}
